@@ -1,0 +1,162 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex">
+<title>لوحة تحكم الموقع — بوابة الآليات المتحدة</title><meta name="theme-color" content="#141517">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FED500;--o:#FF9600;--k:#141517;--c:#1c1e21;--c2:#26292d;--ln:#ffffff14;--w:#F4F4F2;--m:#a8a9ab;--g:#2ed47a;--b:#3ba3ff;--r:#ff6b6b}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Cairo,system-ui,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#fed50012,transparent),var(--k);color:var(--w);min-height:100vh}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 14px;background:#141517f0;border-bottom:1px solid var(--ln);backdrop-filter:blur(8px)}
+.top img{width:36px}.top b{font-size:15px;font-weight:900}.top small{display:block;color:var(--m);font-size:11px}.sp{flex:1}
+.tabs{position:sticky;top:57px;z-index:4;display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:#141517f0;border-bottom:1px solid var(--ln);scrollbar-width:none}
+.tabs button{flex:none;border:0;background:var(--c2);color:#cfd0d1;font:inherit;font-weight:800;font-size:13.5px;padding:8px 14px;border-radius:11px;cursor:pointer}.tabs button.on{background:linear-gradient(135deg,var(--y),var(--o));color:#141517}
+.tabs .bd{display:inline-grid;place-items:center;min-width:18px;height:18px;border-radius:9px;background:var(--r);color:#fff;font-size:11px;margin-inline-start:5px;padding:0 5px}
+.btn{border:0;border-radius:12px;padding:10px 15px;font:inherit;font-weight:800;cursor:pointer;background:var(--c2);color:var(--w);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn.y{background:linear-gradient(135deg,var(--y),var(--o));color:#141517}.btn.s{padding:6px 10px;font-size:12.5px;border-radius:9px}.btn.r{background:#ff6b6b22;color:var(--r)}.btn:disabled{opacity:.5}
+.wrap{max-width:980px;margin:0 auto;padding:16px 12px 120px}
+.card{background:var(--c);border:1px solid var(--ln);border-radius:18px;padding:16px;margin-bottom:14px}
+.card h2{font-size:15.5px;font-weight:900;display:flex;align-items:center;gap:8px;margin-bottom:12px}.card h2 i{font-style:normal;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#fed5001f;color:var(--y)}
+label{display:block;font-size:13px;font-weight:700;color:#d6d7d8;margin:10px 0 6px}
+input,textarea,select{width:100%;font:inherit;font-size:15px;color:var(--w);background:#111214;border:1px solid #ffffff1f;border-radius:12px;padding:10px 12px}
+textarea{min-height:90px;resize:vertical;line-height:1.7}input:focus,textarea:focus{outline:none;border-color:var(--y);box-shadow:0 0 0 3px #fed50026}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:640px){.g2{grid-template-columns:1fr}}
+.svc{border:1px solid var(--ln);border-radius:14px;padding:10px 12px;margin-bottom:10px;background:#18191c}.svc b{color:var(--y);font-size:12px}
+.tg{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--ln);font-weight:700;font-size:14px}.tg:first-of-type{border-top:0}
+.sw{position:relative;width:50px;height:28px;flex:none;margin:0}.sw input{opacity:0;position:absolute;inset:0;cursor:pointer;z-index:1;margin:0}.sw span{position:absolute;inset:0;border-radius:20px;background:#3a3d42;transition:.25s}.sw span::after{content:"";position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.25s}.sw input:checked+span{background:var(--y)}.sw input:checked+span::after{right:25px}
+.bar{position:fixed;bottom:0;left:0;right:0;z-index:6;display:flex;gap:10px;align-items:center;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:#141517f2;border-top:1px solid var(--ln)}
+.bar .btn.y{flex:1;justify-content:center;padding:14px;font-size:16px}.st{font-size:12px;color:var(--m)}
+.login{max-width:380px;margin:12vh auto;padding:0 16px;text-align:center}.login img{width:84px;margin-bottom:10px}.login h1{font-size:22px;font-weight:900;margin-bottom:4px}.login p{color:var(--m);font-size:13.5px;margin-bottom:16px}
+.login .btn{width:100%;justify-content:center;margin-top:12px;padding:13px}.err{color:var(--r);font-size:13px;margin-top:10px;min-height:18px}
+.toast{position:fixed;top:70px;left:50%;transform:translateX(-50%) translateY(-20px);opacity:0;background:var(--g);color:#08210f;font-weight:800;padding:10px 18px;border-radius:12px;transition:.3s;z-index:9;pointer-events:none}.toast.on{opacity:1;transform:translateX(-50%)}
+.hint{font-size:12px;color:var(--m);margin-top:4px}
+/* dashboard */
+.rng{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}.rng button{border:1px solid var(--ln);background:none;color:#cfd0d1;font:inherit;font-weight:800;font-size:13px;padding:6px 12px;border-radius:10px;cursor:pointer}.rng button.on{background:var(--y);color:#141517;border-color:var(--y)}
+.live{margin-inline-start:auto;display:flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--g)}.live i{width:9px;height:9px;border-radius:50%;background:var(--g);box-shadow:0 0 0 0 #2ed47a88;animation:pl 1.6s infinite}@keyframes pl{70%{box-shadow:0 0 0 9px #2ed47a00}}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}@media(min-width:760px){.kpis{grid-template-columns:repeat(6,1fr)}}
+.kpi{background:var(--c);border:1px solid var(--ln);border-radius:16px;padding:12px;position:relative;overflow:hidden}.kpi span{font-size:12px;color:var(--m);font-weight:700}.kpi b{display:block;font-size:24px;font-weight:900;margin-top:2px;font-variant-numeric:tabular-nums}.kpi::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:var(--kc,var(--y))}
+.ch{width:100%;height:190px;display:block}.legend{display:flex;gap:14px;font-size:12px;color:var(--m);margin-top:6px}.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:5px;vertical-align:-1px}
+.g2d{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:760px){.g2d{grid-template-columns:1fr 1fr}}
+.hb{display:flex;align-items:center;gap:8px;margin:7px 0;font-size:13px}.hb .l{width:110px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}.hb .t{flex:1;height:10px;background:#2a2d31;border-radius:6px;overflow:hidden}.hb .t i{display:block;height:100%;background:linear-gradient(90deg,var(--y),var(--o));border-radius:6px}.hb .n{width:44px;text-align:left;color:var(--m);font-variant-numeric:tabular-nums}
+.empty{color:var(--m);font-size:13px;padding:8px 0}
+.conv{display:flex;gap:10px;flex-wrap:wrap}.conv div{flex:1;min-width:120px;background:#18191c;border-radius:12px;padding:10px;text-align:center}.conv b{display:block;font-size:20px;color:var(--y)}.conv span{font-size:12px;color:var(--m)}
+/* quotes */
+.q{border:1px solid var(--ln);border-radius:14px;padding:12px;margin-bottom:10px;background:#18191c}.q.new{border-color:#fed50066}.q h3{font-size:15px;display:flex;gap:8px;align-items:center}.q .meta{font-size:12px;color:var(--m)}.q p{font-size:13.5px;margin:6px 0;line-height:1.7}.q .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.pill{font-size:11px;font-weight:800;padding:2px 8px;border-radius:8px;background:#fed50022;color:var(--y)}.pill.done{background:#2ed47a22;color:var(--g)}
+/* images */
+.imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px}.im{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1;background:#111}.im img{width:100%;height:100%;object-fit:cover;display:block}.im.off img{opacity:.25;filter:grayscale(1)}
+.im .x{position:absolute;top:5px;left:5px;display:flex;gap:4px}.im .x button{width:28px;height:28px;border-radius:8px;border:0;background:#000b;color:#fff;font-size:14px;cursor:pointer}.im .tag{position:absolute;bottom:5px;right:5px;font-size:10.5px;font-weight:800;background:#000b;color:var(--y);padding:2px 6px;border-radius:6px}
+.up{display:flex;align-items:center;justify-content:center;gap:8px;border:2px dashed #ffffff30;border-radius:14px;padding:14px;color:var(--m);font-weight:800;cursor:pointer;margin-top:10px}.up input{display:none}
+.sws{display:flex;gap:10px;flex-wrap:wrap}.sws button{width:40px;height:40px;border-radius:50%;border:3px solid transparent;cursor:pointer}.sws button.on{border-color:#fff}
+</style></head><body><div id="app"></div><div class="toast" id="toast"></div>
+<script>
+const SECS=[["strengths", "نقاط القوة"], ["about", "من نحن"], ["ceo", "كلمة المدير"], ["services", "الخدمات"], ["fleet", "الأسطول"], ["values", "القيم"], ["field", "المعرض"], ["clients", "العملاء"], ["cta", "شريط الدعوة"], ["quote", "طلب عرض سعر"], ["contact", "تواصل معنا"]],SITE='https://machinerygate.sites.tab.bot/',LOGO=SITE+'img/mark.svg';
+let T=localStorage.getItem('mgu-adm')||'',C=null,M=null,tab=location.hash.slice(1)||'dash',days=7,QN=0;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const api=(p,o={})=>fetch(p,{...o,headers:{...(o.raw?{}:{'content-type':'application/json'}),...(o.headers||{}),...(T?{authorization:'Bearer '+T}:{})}}).then(async r=>({s:r.status,j:await r.json().catch(()=>({}))}));
+const nf=n=>Number(n||0).toLocaleString('ar-SA');
+function toast(t,c){const e=$('#toast');e.textContent=t;e.style.background=c||'#2ed47a';e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2200)}
+async function boot(){const st=(await api('/api/status')).j;if(!st.setup)return loginView(true);if(!T)return loginView(false);
+ const [a,b]=await Promise.all([api('/api/config'),api('/api/meta')]);C=a.j;M=b.j;shell()}
+function loginView(setup){$('#app').innerHTML=`<div class="login"><img src="${LOGO}" alt=""><h1>لوحة تحكم الموقع</h1><p>${setup?'أول دخول: اختر كلمة مرور للوحة (٦ أحرف على الأقل)':'أدخل كلمة المرور'}</p>
+<input id="pw" type="password" placeholder="كلمة المرور" autocomplete="${setup?'new-password':'current-password'}">${setup?'<input id="pw2" type="password" placeholder="أعد كتابة كلمة المرور" style="margin-top:10px" autocomplete="new-password">':''}
+<button class="btn y" id="go">${setup?'إنشاء ودخول':'دخول'}</button><div class="err" id="err"></div></div>`;
+ const go=async()=>{const pw=$('#pw').value;if(setup&&pw!==$('#pw2').value)return $('#err').textContent='كلمتا المرور غير متطابقتين';
+  const r=await api(setup?'/api/setup':'/api/login',{method:'POST',body:JSON.stringify({password:pw})});
+  if(r.j.token){T=r.j.token;localStorage.setItem('mgu-adm',T);boot()}else $('#err').textContent={short:'كلمة المرور قصيرة (٦ أحرف على الأقل)',bad:'كلمة المرور غير صحيحة',locked:'محاولات كثيرة، حاول بعد ١٥ دقيقة'}[r.j.error]||'تعذر الدخول'};
+ $('#go').onclick=go;$$('#app input').forEach(i=>i.onkeydown=e=>{if(e.key==='Enter')go()})}
+function authFail(){toast('انتهت الجلسة، سجّل دخول','#ff6b6b');localStorage.removeItem('mgu-adm');T='';setTimeout(boot,900)}
+const TABS=[['dash','📊 المؤشرات'],['quotes','📥 الطلبات'],['content','✏️ المحتوى'],['images','🖼️ الصور'],['look','🎨 المظهر والأقسام'],['set','⚙️ الإعدادات']];
+function shell(){$('#app').innerHTML=`<div class="top"><img src="${LOGO}" alt=""><div><b>لوحة تحكم الموقع</b><small>بوابة الآليات المتحدة</small></div><div class="sp"></div><a class="btn s" href="${SITE}" target="_blank">عرض الموقع ↗</a></div>
+<div class="tabs">${TABS.map(([k,n])=>`<button data-t="${k}" class="${k===tab?'on':''}">${n}${k==='quotes'?'<span class="bd" id="qbd" hidden></span>':''}</button>`).join('')}</div><div class="wrap" id="v"></div><div id="bar"></div>`;
+ $$('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;location.hash=tab;$$('.tabs button').forEach(x=>x.classList.toggle('on',x===b));view()});view();qBadge()}
+async function qBadge(){const r=await api('/api/stats?days=365');if(r.s===401)return;const n=r.j.quotes_new||0;const e=$('#qbd');if(e){e.hidden=!n;e.textContent=n}}
+function view(){$('#bar').innerHTML='';({dash,quotes,content,images,look,set})[tab]()}
+/* ---------- dashboard ---------- */
+async function dash(){$('#v').innerHTML=`<div class="rng">${[[1,'اليوم'],[7,'٧ أيام'],[30,'٣٠ يوم'],[90,'٩٠ يوم']].map(([d,n])=>`<button data-d="${d}" class="${d===days?'on':''}">${n}</button>`).join('')}<span class="live"><i></i><span id="lv">…</span></span></div><div id="dv"><div class="empty">جاري التحميل…</div></div>`;
+ $$('.rng button').forEach(b=>b.onclick=()=>{days=+b.dataset.d;dash()});
+ const r=await api('/api/stats?days='+days);if(r.s===401)return authFail();const s=r.j;if(!s||s.error){$('#dv').innerHTML='<div class="empty">تعذر تحميل البيانات</div>';return}
+ $('#lv').textContent=nf(s.live)+' متصل الآن';
+ const ct=s.calls+s.wa+s.mail,conv=s.visitors?((ct+s.quotes)/s.visitors*100).toFixed(1):0;
+ const K=(n,v,c)=>`<div class="kpi" style="--kc:${c}"><span>${n}</span><b>${nf(v)}</b></div>`;
+ const SN=Object.fromEntries(SECS.concat([['hero','الواجهة'],['contact','تواصل معنا']]));
+ const bars=(arr,lab)=>{if(!arr||!arr.length)return '<div class="empty">لا توجد بيانات بعد</div>';const mx=Math.max(...arr.map(x=>x.n));return arr.map(x=>`<div class="hb"><span class="l">${esc(lab?lab(x.k):x.k||'غير معروف')}</span><span class="t"><i style="width:${(x.n/mx*100).toFixed(1)}%"></i></span><span class="n">${nf(x.n)}</span></div>`).join('')};
+ const DV={mobile:'📱 جوال',desktop:'💻 كمبيوتر',tablet:'📲 تابلت'},LG={ar:'العربية',en:'English',ur:'اردو',hi:'हिन्दी'},CT={SA:'🇸🇦 السعودية',AE:'🇦🇪 الإمارات',KW:'🇰🇼 الكويت',QA:'🇶🇦 قطر',BH:'🇧🇭 البحرين',OM:'🇴🇲 عُمان',EG:'🇪🇬 مصر',JO:'🇯🇴 الأردن',US:'🇺🇸 أمريكا',IN:'🇮🇳 الهند',PK:'🇵🇰 باكستان'};
+ const H=Array(24).fill(0);(s.hours||[]).forEach(h=>H[h.h]=h.n);const hm=Math.max(1,...H);
+ $('#dv').innerHTML=`<div class="kpis">${K('الزوار',s.visitors,'#FED500')}${K('مشاهدات الصفحة',s.pv,'#FF9600')}${K('ضغطات اتصال',s.calls,'#3ba3ff')}${K('ضغطات واتساب',s.wa,'#2ed47a')}${K('طلبات عروض',s.quotes,'#c084fc')}${K('نسبة التحويل %',conv,'#ff6b6b')}</div>
+ <div class="card"><h2><i>📈</i>الزوار والتواصل يومياً</h2>${chart(s.daily)}<div class="legend"><span><i style="background:#FED500"></i>زوار</span><span><i style="background:#2ed47a"></i>ضغطات تواصل</span></div></div>
+ <div class="g2d"><div class="card"><h2><i>🧭</i>من وين جوا الزوار</h2>${bars(s.ref)}</div><div class="card"><h2><i>📍</i>المدن</h2>${bars(s.city)}<div style="height:8px"></div>${bars(s.country,k=>CT[k]||k)}</div>
+ <div class="card"><h2><i>📱</i>الأجهزة</h2>${bars(s.dev,k=>DV[k]||k)}</div><div class="card"><h2><i>🌐</i>اللغات</h2>${bars(s.lang,k=>LG[k]||k)}</div>
+ <div class="card"><h2><i>👀</i>أكثر الأقسام مشاهدة</h2>${bars(s.secs,k=>SN[k]||k)}</div>
+ <div class="card"><h2><i>🕐</i>أوقات الزيارة (بتوقيت الرياض)</h2><svg class="ch" viewBox="0 0 480 160" preserveAspectRatio="none">${H.map((v,i)=>`<rect x="${i*20+3}" y="${140-v/hm*125}" width="14" height="${Math.max(1,v/hm*125)}" rx="3" fill="${v===hm&&v?'#FF9600':'#FED50099'}"/>`).join('')}${[0,6,12,18,23].map(h=>`<text x="${h*20+10}" y="156" font-size="10" fill="#a8a9ab" text-anchor="middle">${h}</text>`).join('')}</svg></div></div>
+ <div class="card"><h2><i>🎯</i>من وين يضغطون للتواصل</h2>${s.clicks&&s.clicks.length?bars(s.clicks.map(x=>({k:(SN[x.k]||x.k||'—')+' · '+({call:'اتصال',wa:'واتساب',mail:'إيميل'}[x.t]),n:x.n}))):'<div class="empty">لا توجد ضغطات بعد</div>'}
+ <div class="conv" style="margin-top:12px"><div><b>${nf(s.calls)}</b><span>اتصال</span></div><div><b>${nf(s.wa)}</b><span>واتساب</span></div><div><b>${nf(s.mail)}</b><span>إيميل</span></div><div><b>${nf(s.quotes_new)}</b><span>طلبات جديدة</span></div></div></div>
+ <div class="hint">تبدأ الإحصائيات من لحظة تفعيل اللوحة، وتتحدث كل ما تفتح الصفحة.</div>`}
+function chart(rows){const ds=[];const now=new Date(Date.now()+3*3600e3);for(let i=days-1;i>=0;i--){ds.push(new Date(now-i*864e5).toISOString().slice(0,10))}
+ if(days===1)return `<div class="conv">${(()=>{const r=(rows||[])[0]||{};return `<div><b>${nf(r.uv)}</b><span>زوار اليوم</span></div><div><b>${nf(r.pv)}</b><span>مشاهدات</span></div><div><b>${nf(r.ct)}</b><span>ضغطات تواصل</span></div>`})()}</div>`;
+ const mp={};(rows||[]).forEach(r=>mp[r.day]=r);const U=ds.map(d=>(mp[d]||{}).uv||0),Cc=ds.map(d=>(mp[d]||{}).ct||0);const mx=Math.max(1,...U,...Cc);
+ const W=600,Hh=170,px=i=>ds.length<2?W/2:i*(W-20)/(ds.length-1)+10,py=v=>Hh-14-v/mx*(Hh-30);
+ const line=a=>a.map((v,i)=>(i?'L':'M')+px(i).toFixed(1)+' '+py(v).toFixed(1)).join(' ');
+ const area=a=>line(a)+` L${px(a.length-1)} ${Hh-14} L${px(0)} ${Hh-14} Z`;
+ const step=Math.ceil(ds.length/6);
+ return `<svg class="ch" viewBox="0 0 ${W} ${Hh}" preserveAspectRatio="none"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FED500" stop-opacity=".35"/><stop offset="1" stop-color="#FED500" stop-opacity="0"/></linearGradient></defs>
+ ${[0,.5,1].map(f=>`<line x1="0" x2="${W}" y1="${py(mx*f)}" y2="${py(mx*f)}" stroke="#ffffff10"/><text x="${W-2}" y="${py(mx*f)-3}" font-size="10" fill="#a8a9ab" text-anchor="end">${Math.round(mx*f)}</text>`).join('')}
+ <path d="${area(U)}" fill="url(#ga)"/><path d="${line(U)}" fill="none" stroke="#FED500" stroke-width="2.5" stroke-linejoin="round"/><path d="${line(Cc)}" fill="none" stroke="#2ed47a" stroke-width="2" stroke-dasharray="5 4"/>
+ ${ds.map((d,i)=>i%step===0||i===ds.length-1?`<text x="${px(i)}" y="${Hh-1}" font-size="10" fill="#a8a9ab" text-anchor="middle">${d.slice(5).replace('-','/')}</text>`:'').join('')}</svg>`}
+/* ---------- quotes ---------- */
+async function quotes(){$('#v').innerHTML='<div class="empty">جاري التحميل…</div>';const r=await api('/api/quotes');if(r.s===401)return authFail();const it=r.j.items||[];
+ $('#v').innerHTML=`<div class="card"><h2><i>📥</i>طلبات عروض الأسعار (${nf(it.length)})</h2>${it.length?'':'<div class="empty">ما فيه طلبات للحين. أي أحد يعبّي نموذج «طلب عرض سعر» بالموقع يوصل هنا مع رسالة الواتساب.</div>'}
+ ${it.map(q=>`<div class="q ${q.status==='new'?'new':''}"><h3>${esc(q.name)} <span class="pill ${q.status==='done'?'done':''}">${q.status==='done'?'تم التواصل':'جديد'}</span></h3><div class="meta">${new Date(q.ts).toLocaleString('ar-SA')}${q.city?' · '+esc(q.city):''}</div>
+ <p>📦 ${esc(q.type)}<br>📍 من: ${esc(q.src)} ← إلى: ${esc(q.dst)}${q.date?'<br>📅 '+esc(q.date):''}${q.notes?'<br>📝 '+esc(q.notes):''}</p>
+ <div class="acts"><a class="btn s" href="tel:${esc(q.phone)}">📞 ${esc(q.phone)}</a><a class="btn s" target="_blank" href="https://wa.me/${esc(String(q.phone).replace(/\D/g,'').replace(/^0/,'966'))}">واتساب</a>${q.status!=='done'?`<button class="btn s y" data-done="${q.id}">تم التواصل ✓</button>`:''}<button class="btn s r" data-del="${q.id}">حذف</button></div></div>`).join('')}</div>`;
+ $$('[data-done]').forEach(b=>b.onclick=async()=>{await api('/api/quotes',{method:'POST',body:JSON.stringify({id:b.dataset.done,status:'done'})});quotes();qBadge()});
+ $$('[data-del]').forEach(b=>b.onclick=async()=>{if(!confirm('حذف الطلب؟'))return;await api('/api/quotes',{method:'POST',body:JSON.stringify({id:b.dataset.del,delete:true})});quotes();qBadge()})}
+/* ---------- content ---------- */
+const F=(k,l,ta,h)=>`<label>${l}</label>${ta?`<textarea data-k="${k}">${esc(C[k])}</textarea>`:`<input data-k="${k}" value="${esc(C[k])}" ${/phone/.test(k)?'inputmode="tel" dir="ltr"':/email|link/.test(k)?'dir="ltr"':''}>`}${h?`<div class="hint">${h}</div>`:''}`;
+function saveBar(){$('#bar').innerHTML=`<div class="bar"><span class="st" id="st">${C.updated?'آخر حفظ: '+new Date(C.updated).toLocaleString('ar-SA'):'لم يُحفظ أي تعديل بعد'}</span><button class="btn y" id="sv">حفظ ونشر بالموقع</button></div>`;$('#sv').onclick=save}
+function collect(){$$('[data-k]').forEach(e=>C[e.dataset.k]=e.value.trim());const an=$('#an');if(an)C.announce_on=an.checked;
+ if($('[data-s]'))C.services=C.services.map((s,i)=>({t:$(`[data-s="${i}"][data-f="t"]`).value.trim(),d:$(`[data-s="${i}"][data-f="d"]`).value.trim()}));
+ if($('[data-tt]')){C.titles={};$$('[data-tt]').forEach(e=>{const k=e.dataset.tt;C.titles[k]=C.titles[k]||{};C.titles[k][e.dataset.f]=e.value.trim()})}
+ if($('[data-sec]'))C.hide=$$('[data-sec]').filter(e=>!e.checked).map(e=>e.dataset.sec);const qs=$('#qs');if(qs)C.quote_store=qs.checked}
+async function save(){collect();$('#sv').disabled=true;const r=await api('/api/config',{method:'PUT',body:JSON.stringify(C)});$('#sv').disabled=false;
+ if(r.s===401)return authFail();if(r.j.ok){C.updated=r.j.updated;$('#st').textContent='آخر حفظ: '+new Date(r.j.updated).toLocaleString('ar-SA');toast('تم الحفظ ✅ — يظهر بالموقع خلال ثواني')}else toast('تعذر الحفظ','#ff6b6b')}
+function content(){const TT=M.titles||{};$('#v').innerHTML=`
+<div class="card"><h2><i>☎</i>أرقام التواصل والإيميلات</h2><div class="g2">${F('phone1','الرقم الأساسي (اتصال + واتساب)')}${F('phone2','الرقم الثاني')}</div><div class="g2">${F('email1','الإيميل الأول')}${F('email2','الإيميل الثاني')}</div><div class="hint">يتغير بكل مكان بالموقع: الأزرار، الواتساب، نموذج الطلب، قسم التواصل.</div></div>
+<div class="card"><h2><i>📢</i>شريط إعلان أعلى الموقع</h2><div class="tg">إظهار الشريط<label class="sw"><input type="checkbox" id="an" ${C.announce_on?'checked':''}><span></span></label></div>${F('announce_text','نص الإعلان',false,'مثال: متاح الآن نقل المعدات لجميع مناطق المملكة')}${F('announce_link','رابط عند الضغط (اختياري)')}</div>
+<div class="card"><h2><i>★</i>الواجهة</h2>${F('hero_tag','العبارة الرئيسية')}${F('hero_sub','العبارة الثانية')}${F('hero_words','الكلمات المتغيرة بعد «نقل» (كل كلمة بسطر)',true)}</div>
+<div class="card"><h2><i>🔤</i>عناوين الأقسام</h2>${Object.keys(TT).map(k=>{const cur=(C.titles||{})[k]||{};return `<div class="svc"><b>${esc((SECS.find(x=>x[0]===k)||[k,k])[1])}</b><div class="g2"><input data-tt="${k}" data-f="s" placeholder="${esc(TT[k].s)}" value="${esc(cur.s||'')}" style="margin-top:6px"><input data-tt="${k}" data-f="t" placeholder="${esc(TT[k].t)}" value="${esc(cur.t||'')}" style="margin-top:6px"></div></div>`}).join('')}<div class="hint">اترك الخانة فاضية عشان يبقى العنوان الأصلي (الظاهر باللون الرمادي).</div></div>
+<div class="card"><h2><i>ℹ</i>من نحن</h2>${F('about_lead','الفقرة الأولى',true)}${F('about_p','الفقرة الثانية',true)}</div>
+<div class="card"><h2><i>✍</i>كلمة المدير التنفيذي</h2><div class="g2">${F('ceo_name','الاسم')}${F('ceo_title','المنصب')}</div>${F('ceo_text','نص الكلمة (افصل الفقرات بسطر فاضي)',true)}</div>
+<div class="card"><h2><i>🚚</i>الخدمات</h2>${C.services.map((s,i)=>`<div class="svc"><b>خدمة ${i+1}</b><input data-s="${i}" data-f="t" value="${esc(s.t)}" style="margin:6px 0"><textarea data-s="${i}" data-f="d" style="min-height:60px">${esc(s.d)}</textarea></div>`).join('')}</div>
+<div class="hint">تعديلات النصوص تظهر بالنسخة العربية من الموقع، والأرقام والإيميلات بكل اللغات.</div>`;saveBar()}
+/* ---------- images ---------- */
+function shrink(file,max=1800){return new Promise((res,rej)=>{const img=new Image();img.onload=()=>{let w=img.naturalWidth,h=img.naturalHeight,s=Math.min(1,max/Math.max(w,h));const c=document.createElement('canvas');c.width=Math.round(w*s);c.height=Math.round(h*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);c.toBlob(b=>b?res(b):rej(),'image/webp',.82)};img.onerror=rej;img.src=URL.createObjectURL(file)})}
+async function upload(files,onDone){for(const f of files){toast('جاري رفع الصورة…','#FED500');try{const b=await shrink(f);const r=await api('/api/upload',{method:'POST',raw:true,headers:{'content-type':'image/webp'},body:b});if(r.s===401)return authFail();if(r.j.url)onDone(r.j.url);else toast('تعذر الرفع','#ff6b6b')}catch(e){toast('صورة غير مدعومة','#ff6b6b')}}images();toast('تم الرفع — اضغط حفظ ونشر')}
+function images(){const hero=(C.hero_imgs&&C.hero_imgs.length)?C.hero_imgs:M.hero;const hid=new Set(C.gallery_hide||[]);
+ $('#v').innerHTML=`<div class="card"><h2><i>🌄</i>صور خلفية الواجهة (تتبدل تلقائياً)</h2><div class="imgs">${hero.map((u,i)=>`<div class="im"><img src="${esc(u)}" loading="lazy"><span class="tag">${i+1}</span><div class="x"><button data-hu="${i}" title="قبل">→</button><button data-hd="${i}" title="بعد">←</button><button data-hx="${i}" title="حذف">✕</button></div></div>`).join('')}</div>
+ <label class="up">＋ رفع صورة للواجهة<input type="file" accept="image/*" multiple id="hup"></label>${C.hero_imgs&&C.hero_imgs.length?'<button class="btn s" id="hrs" style="margin-top:8px">ترجيع صور الواجهة الأصلية</button>':''}</div>
+ <div class="card"><h2><i>🖼️</i>معرض الصور (${nf(M.gallery.length-hid.size+(C.gallery_add||[]).length)} صورة ظاهرة)</h2><div class="hint" style="margin-bottom:8px">اضغط 👁 لإخفاء أو إظهار أي صورة. الصور المرفوعة تنضاف بأول المعرض.</div>
+ <div class="imgs">${(C.gallery_add||[]).map((u,i)=>`<div class="im"><img src="${esc(u)}" loading="lazy"><span class="tag">جديدة</span><div class="x"><button data-gx="${i}">✕</button></div></div>`).join('')}${M.gallery.map(u=>`<div class="im ${hid.has(u)?'off':''}"><img src="${esc(u)}" loading="lazy"><div class="x"><button data-gt="${esc(u)}">${hid.has(u)?'🚫':'👁'}</button></div></div>`).join('')}</div>
+ <label class="up">＋ رفع صور للمعرض<input type="file" accept="image/*" multiple id="gup"></label></div>`;
+ const H=()=>C.hero_imgs&&C.hero_imgs.length?C.hero_imgs:(C.hero_imgs=[...M.hero]);
+ $$('[data-hx]').forEach(b=>b.onclick=()=>{const a=H();if(a.length<=1)return toast('لازم صورة وحدة على الأقل','#ff6b6b');a.splice(+b.dataset.hx,1);images()});
+ $$('[data-hu]').forEach(b=>b.onclick=()=>{const a=H(),i=+b.dataset.hu;if(i>0){[a[i-1],a[i]]=[a[i],a[i-1]];images()}});
+ $$('[data-hd]').forEach(b=>b.onclick=()=>{const a=H(),i=+b.dataset.hd;if(i<a.length-1){[a[i+1],a[i]]=[a[i],a[i+1]];images()}});
+ const hr=$('#hrs');if(hr)hr.onclick=()=>{C.hero_imgs=[];images()};
+ $('#hup').onchange=e=>upload([...e.target.files],u=>H().push(u));
+ $('#gup').onchange=e=>upload([...e.target.files],u=>{C.gallery_add=C.gallery_add||[];C.gallery_add.unshift(u)});
+ $$('[data-gx]').forEach(b=>b.onclick=()=>{C.gallery_add.splice(+b.dataset.gx,1);images()});
+ $$('[data-gt]').forEach(b=>b.onclick=()=>{const u=b.dataset.gt;C.gallery_hide=C.gallery_hide||[];const i=C.gallery_hide.indexOf(u);i<0?C.gallery_hide.push(u):C.gallery_hide.splice(i,1);images()});
+ saveBar()}
+/* ---------- look ---------- */
+function look(){const AC=[['','الأصلي (أصفر)','#FED500'],['#FF9600','برتقالي','#FF9600'],['#3BA3FF','أزرق','#3BA3FF'],['#2ED47A','أخضر','#2ED47A'],['#E5484D','أحمر','#E5484D'],['#C9A227','ذهبي','#C9A227']];
+ $('#v').innerHTML=`<div class="card"><h2><i>🎨</i>اللون المميز للموقع</h2><div class="sws">${AC.map(([v,n,c])=>`<button data-ac="${v}" title="${n}" style="background:${c}" class="${(C.accent||'')===v?'on':''}"></button>`).join('')}</div><div class="hint">الزائر يقدر يغيّره لنفسه من ⚙️، وهذا اللون الافتراضي للكل.</div></div>
+ <div class="card"><h2><i>👁</i>إظهار وإخفاء الأقسام</h2>${SECS.map(([id,n])=>`<div class="tg">${n}<label class="sw"><input type="checkbox" data-sec="${id}" ${(C.hide||[]).includes(id)?'':'checked'}><span></span></label></div>`).join('')}</div>
+ <div class="card"><h2><i>📥</i>نموذج طلب عرض السعر</h2><div class="tg">حفظ الطلبات باللوحة (مع رسالة الواتساب)<label class="sw"><input type="checkbox" id="qs" ${C.quote_store!==false?'checked':''}><span></span></label></div></div>`;
+ $$('[data-ac]').forEach(b=>b.onclick=()=>{collect();C.accent=b.dataset.ac;look()});saveBar()}
+/* ---------- settings ---------- */
+function set(){$('#v').innerHTML=`<div class="card"><h2><i>🔒</i>كلمة المرور</h2><label>كلمة مرور جديدة</label><input id="np" type="password" autocomplete="new-password"><button class="btn" id="cp" style="margin-top:10px">تغيير كلمة المرور</button></div>
+ <div class="card"><h2><i>↺</i>استرجاع</h2><p class="hint" style="margin-bottom:10px">يرجّع كل النصوص والأرقام والصور والألوان للأصل (الإحصائيات والطلبات ما تنمسح).</p><button class="btn r" id="rs">استرجاع الإعدادات الأصلية</button></div>
+ <div class="card"><h2><i>🚪</i>الجلسة</h2><button class="btn" id="lo">تسجيل خروج</button></div>`;
+ $('#cp').onclick=async()=>{const r=await api('/api/password',{method:'POST',body:JSON.stringify({password:$('#np').value})});if(r.s===401)return authFail();r.j.ok?toast('تم تغيير كلمة المرور'):toast('كلمة المرور قصيرة','#ff6b6b')};
+ $('#rs').onclick=async()=>{if(!confirm('ترجيع كل شي للأصل؟'))return;const r=await api('/api/reset',{method:'POST'});if(r.s===401)return authFail();toast('تم الاسترجاع');C=(await api('/api/config')).j;set()};
+ $('#lo').onclick=()=>{localStorage.removeItem('mgu-adm');T='';boot()}}
+boot();
+</script></body></html>

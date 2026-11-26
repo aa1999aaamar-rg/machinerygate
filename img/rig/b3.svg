@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2201 519">
+<defs>
+<linearGradient id="cab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4f57"/><stop offset=".45" stop-color="#2c3036"/><stop offset="1" stop-color="#17191c"/></linearGradient>
+<linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fb4c4"/><stop offset=".35" stop-color="#3a4a58"/><stop offset="1" stop-color="#0d1318"/></linearGradient>
+<linearGradient id="yel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE34D"/><stop offset=".5" stop-color="#FED500"/><stop offset="1" stop-color="#E0A800"/></linearGradient>
+<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FED500"/><stop offset="1" stop-color="#FF9600"/></linearGradient>
+<linearGradient id="chr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6d7178"/><stop offset=".4" stop-color="#f2f3f4"/><stop offset=".7" stop-color="#a7abb0"/><stop offset="1" stop-color="#55595f"/></linearGradient>
+<linearGradient id="tank" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9ebed"/><stop offset=".5" stop-color="#9ea3a9"/><stop offset="1" stop-color="#5c6066"/></linearGradient>
+<linearGradient id="dk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2d31"/><stop offset="1" stop-color="#0e0f11"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<!-- chassis -->
+<rect x="70" y="392" width="860" height="34" rx="6" fill="#121315"/>
+<!-- fifth wheel -->
+<rect x="590" y="352" width="190" height="26" rx="6" fill="#1b1c1f"/><rect x="600" y="346" width="170" height="10" rx="4" fill="#3a3d42"/>
+<!-- exhaust stack -->
+<rect x="532" y="38" width="20" height="350" rx="8" fill="url(#chr)"/><rect x="528" y="30" width="28" height="18" rx="4" fill="#2b2e33"/>
+<!-- cab body -->
+<path d="M58 404 L46 300 Q42 250 58 200 L78 118 Q86 88 116 78 L176 66 L512 60 Q524 60 524 74 L524 404 Z" fill="url(#cab)"/>
+<!-- roof deflector -->
+<path d="M150 66 Q200 22 300 14 L500 10 Q520 10 520 30 L520 62 L176 66 Z" fill="url(#cab)"/>
+<path d="M170 58 Q220 26 300 22 L500 18" fill="none" stroke="#ffffff22" stroke-width="3"/>
+<!-- sunvisor & marker lights -->
+<path d="M70 112 L200 92 L200 104 L76 124 Z" fill="#101113"/>
+<g fill="#FF9600"><rect x="120" y="70" width="14" height="7" rx="3"/><rect x="160" y="66" width="14" height="7" rx="3"/></g>
+<!-- windshield edge + side window -->
+<path d="M64 196 L84 126 L104 122 L88 200 Z" fill="url(#gl)"/>
+<path d="M112 128 L300 116 Q312 116 312 128 L312 232 Q312 242 300 242 L104 242 Q94 242 96 232 Z" fill="url(#gl)"/>
+<path d="M130 132 L220 126 L150 236 L112 236 Z" fill="#ffffff26"/>
+<!-- mirror -->
+<rect x="40" y="132" width="16" height="78" rx="6" fill="#16181b"/><rect x="54" y="160" width="40" height="6" fill="#16181b"/>
+<!-- door -->
+<path d="M96 104 L320 96 L320 392 L92 392 L74 300 Z" fill="none" stroke="#0b0c0e" stroke-width="4" opacity=".7"/>
+<rect x="268" y="262" width="36" height="9" rx="4" fill="url(#chr)"/>
+<!-- sleeper panel -->
+<rect x="336" y="96" width="176" height="296" rx="10" fill="#ffffff08" stroke="#0b0c0e" stroke-opacity=".5" stroke-width="3"/>
+<!-- brand swoosh -->
+<path d="M52 330 C 200 300, 360 300, 524 252 L524 288 C 380 330, 210 338, 56 356 Z" fill="url(#sw)"/>
+<path d="M58 362 C 220 344, 380 336, 524 296 L524 304 C 380 344, 220 352, 60 370 Z" fill="#FED500" opacity=".55"/>
+<text x="424" y="215" text-anchor="middle" font-family="Arial Black,Arial,Helvetica,sans-serif" font-weight="900" font-size="78" fill="#FED500" letter-spacing="2">MGU</text>
+<text x="424" y="248" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="17" fill="#cfd2d6" letter-spacing="3">TRANSPORT</text>
+<!-- cab shine -->
+<path d="M100 84 L512 70 L512 84 L100 98 Z" fill="url(#shine)"/>
+<!-- grille/bumper/headlight -->
+<path d="M44 304 L60 304 L64 392 L48 392 Z" fill="#0f1012"/>
+<rect x="28" y="380" width="96" height="52" rx="10" fill="url(#dk)"/>
+<path d="M36 318 L58 314 L60 350 L38 352 Z" fill="#fff6c8"/><path d="M36 318 L58 314 L59 330 L37 333 Z" fill="#fff"/>
+<rect x="30" y="398" width="24" height="10" rx="3" fill="#FF9600"/>
+<!-- steps -->
+<g fill="#202226"><rect x="250" y="400" width="60" height="10" rx="3"/><rect x="250" y="424" width="60" height="10" rx="3"/></g>
+<!-- fuel tank -->
+<rect x="330" y="396" width="190" height="56" rx="26" fill="url(#tank)"/><g stroke="#4b4f55" stroke-width="3"><line x1="372" y1="398" x2="372" y2="450"/><line x1="480" y1="398" x2="480" y2="450"/></g>
+<!-- wheel arches -->
+<path d="M110 450 A97 97 0 0 1 304 450 L304 420 L110 420 Z" fill="#0c0d0f"/>
+<path d="M564 446 A92 92 0 0 1 748 446 L748 416 L564 416 Z" fill="#0c0d0f"/>
+<path d="M556 360 L760 360 L760 380 Q656 362 556 384 Z" fill="#1b1d20"/>
+<!-- TRAILER gooseneck -->
+<rect x="606" y="320" width="150" height="34" rx="4" fill="#1d1f22"/><rect x="620" y="326" width="120" height="6" fill="#3a3d42"/>
+<path d="M548 286 Q548 318 566 330 L560 330 Z" fill="#b98a00"/>
+<path d="M572 282 Q550 282 548 300 L548 318 Q550 330 566 330 L560 318 L560 286 Z M560 286 L960 286 L1010 336 L1010 361 L940 361 L900 318 L560 318 Z" fill="url(#yel)"/>
+<path d="M560 286 L960 286 L968 294 L560 294 Z" fill="#fff38a" opacity=".7"/>
+<path d="M560 318 L900 318 L940 361 L960 361 L960 372 L930 372 L892 330 L560 330 Z" fill="#b98a00"/>
+<rect x="560" y="300" width="400" height="8" fill="#FF9600" opacity=".8"/>
+<text x="760" y="314" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="22" fill="#141517" letter-spacing="6">MGU</text>
+<!-- main deck -->
+<rect x="960" y="352" width="1180" height="12" rx="3" fill="#3a2a10"/>
+<rect x="960" y="361" width="1180" height="30" fill="url(#yel)"/>
+<rect x="960" y="361" width="1180" height="5" fill="#fff38a" opacity=".7"/>
+<rect x="960" y="380" width="1180" height="6" fill="#FF9600"/>
+<g fill="#b98a00"><rect x="1000" y="366" width="6" height="14"/><rect x="1060" y="366" width="6" height="14"/><rect x="1120" y="366" width="6" height="14"/><rect x="1180" y="366" width="6" height="14"/><rect x="1240" y="366" width="6" height="14"/><rect x="1300" y="366" width="6" height="14"/><rect x="1360" y="366" width="6" height="14"/><rect x="1420" y="366" width="6" height="14"/><rect x="1480" y="366" width="6" height="14"/><rect x="1540" y="366" width="6" height="14"/><rect x="1600" y="366" width="6" height="14"/><rect x="1660" y="366" width="6" height="14"/><rect x="1720" y="366" width="6" height="14"/><rect x="1780" y="366" width="6" height="14"/><rect x="1840" y="366" width="6" height="14"/><rect x="1900" y="366" width="6" height="14"/><rect x="1960" y="366" width="6" height="14"/><rect x="2020" y="366" width="6" height="14"/><rect x="2080" y="366" width="6" height="14"/></g>
+<!-- trailer under-frame + fenders -->
+
+
+<path d="M1442.5 386 L1494.5 386 L1478.5 432 L1458.5 432 Z" fill="#1a1b1e"/><path d="M1634.8 386 L1686.8 386 L1670.8 432 L1650.8 432 Z" fill="#1a1b1e"/><path d="M1830.3 386 L1882.3 386 L1866.3 432 L1846.3 432 Z" fill="#1a1b1e"/><rect x="1400" y="384" width="530" height="10" rx="3" fill="#141517"/><!-- ramps (folded up) --><g transform="translate(2100 364) rotate(-66)"><rect x="0" y="-48" width="190" height="44" rx="5" fill="url(#yel)" stroke="#a87c00" stroke-width="3"/><g stroke="#a87c00" stroke-width="5"><line x1="16" y1="-46" x2="16" y2="-6"/><line x1="36" y1="-46" x2="36" y2="-6"/><line x1="56" y1="-46" x2="56" y2="-6"/><line x1="76" y1="-46" x2="76" y2="-6"/><line x1="96" y1="-46" x2="96" y2="-6"/><line x1="116" y1="-46" x2="116" y2="-6"/><line x1="136" y1="-46" x2="136" y2="-6"/><line x1="156" y1="-46" x2="156" y2="-6"/><line x1="176" y1="-46" x2="176" y2="-6"/></g><rect x="0" y="-48" width="190" height="7" fill="#fff38a" opacity=".6"/></g><g transform="translate(2128 364) rotate(-66)"><rect x="0" y="-48" width="190" height="44" rx="5" fill="url(#yel)" stroke="#a87c00" stroke-width="3"/><g stroke="#a87c00" stroke-width="5"><line x1="16" y1="-46" x2="16" y2="-6"/><line x1="36" y1="-46" x2="36" y2="-6"/><line x1="56" y1="-46" x2="56" y2="-6"/><line x1="76" y1="-46" x2="76" y2="-6"/><line x1="96" y1="-46" x2="96" y2="-6"/><line x1="116" y1="-46" x2="116" y2="-6"/><line x1="136" y1="-46" x2="136" y2="-6"/><line x1="156" y1="-46" x2="156" y2="-6"/><line x1="176" y1="-46" x2="176" y2="-6"/></g><rect x="0" y="-48" width="190" height="7" fill="#fff38a" opacity=".6"/></g><rect x="2130" y="356" width="22" height="40" rx="4" fill="#2a2d31"/>
+<!-- rear lights -->
+<rect x="2134" y="386" width="16" height="10" rx="2" fill="#ff3b30"/><rect x="2116" y="386" width="14" height="10" rx="2" fill="#FF9600"/>
+<!-- side markers -->
+<g fill="#FF9600"><rect x="1050" y="383" width="10" height="5" rx="2"/><rect x="1230" y="383" width="10" height="5" rx="2"/><rect x="1410" y="383" width="10" height="5" rx="2"/><rect x="1590" y="383" width="10" height="5" rx="2"/><rect x="1770" y="383" width="10" height="5" rx="2"/><rect x="1950" y="383" width="10" height="5" rx="2"/></g>
+</svg>
