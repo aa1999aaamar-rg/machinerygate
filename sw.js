@@ -1,4 +1,4 @@
-const V='mgu-v31';const CORE=["./", "./index.html", "./styles.css?v=31", "./app.js?v=31", "./i18n.js?v=2", "./vendor/gsap.min.js", "./vendor/ScrollTrigger.min.js", "./vendor/lenis.min.js", "./fonts/cairo.woff2", "./img/logo-h.svg", "./img/mark.svg", "./img/field-truck.webp", "./icons/icon-192.png", "./icons/icon-512.png", "./manifest.webmanifest", "./offline.html"];
+const V='mgu-v32';const CORE=["./", "./index.html", "./styles.css?v=32", "./app.js?v=32", "./i18n.js?v=32", "./vendor/gsap.min.js", "./vendor/ScrollTrigger.min.js", "./vendor/lenis.min.js", "./fonts/cairo.woff2", "./img/logo-h.svg", "./img/mark.svg", "./img/hero/h0.webp", "./icons/icon-192.png", "./icons/icon-512.png", "./manifest.webmanifest", "./offline.html"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{
